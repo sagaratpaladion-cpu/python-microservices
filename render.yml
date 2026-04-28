@@ -1,0 +1,37 @@
+services:
+
+  - type: web
+    name: hello-service
+    runtime: docker
+    dockerfilePath: ./hello_service/Dockerfile
+    dockerContext: ./hello_service
+    envVars:
+      - key: PORT
+        value: 5001
+
+  - type: web
+    name: greet-service
+    runtime: docker
+    dockerfilePath: ./greet_service/Dockerfile
+    dockerContext: ./greet_service
+    envVars:
+      - key: PORT
+        value: 5002
+
+  - type: web
+    name: fact-service
+    runtime: docker
+    dockerfilePath: ./fact_service/Dockerfile
+    dockerContext: ./fact_service
+    envVars:
+      - key: PORT
+        value: 5003
+
+  - type: web
+    name: gateway
+    runtime: docker
+    dockerfilePath: ./gateway/Dockerfile
+    dockerContext: ./gateway
+    envVars:
+      - key: PORT
+        value: 5000
