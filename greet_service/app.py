@@ -7,4 +7,4 @@ def greet(name):
     return jsonify({ "message": f"Hey {name}, welcome! 👋" })
 
 if __name__ == '__main__':
-    app.run(port=5002)   # Different port!
+    app.run(host='0.0.0.0', port=5002)  # Different port!

@@ -1,0 +1,27 @@
+
+
+services:
+
+  hello_service:
+    build: ./hello_service
+    ports:
+      - "5001:5001"
+
+  greet_service:
+    build: ./greet_service
+    ports:
+      - "5002:5002"
+
+  fact_service:
+    build: ./fact_service
+    ports:
+      - "5003:5003"
+
+  gateway:
+    build: ./gateway
+    ports:
+      - "5000:5000"
+    depends_on:
+      - hello_service
+      - greet_service
+      - fact_service
